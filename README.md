@@ -1,87 +1,90 @@
-Introdução ao JavaScript
 
-Resumo dos principais conceitos da apresentação sobre JavaScript do Professor Henrique Delegrego.
-1. História e Conceitos Fundamentais
+# 📘 Introdução ao JavaScript
 
-    O que é? JavaScript é uma linguagem de programação fundamental para o desenvolvimento web, utilizada para adicionar interatividade e dinamismo às páginas HTML e CSS.
+> Resumo dos principais conceitos da apresentação sobre **JavaScript** do Professor **Henrique Delegrego**.
 
-    História: Criado em 1995 por Brendan Eich (Netscape). Sua evolução foi impulsionada pelo surgimento de bibliotecas como jQuery, frameworks como Angular, React e Vue.js, e a criação do Node.js em 2009, que permitiu seu uso no back-end.
+---
 
-    Ecossistema: Possui um vasto ecossistema com ferramentas e bibliotecas, sendo uma das linguagens mais versáteis e utilizadas no mundo.
+## 🧠 História e Conceitos Fundamentais
 
-    Observação: Java e JavaScript não são a mesma coisa.
+**O que é?**  
+JavaScript é uma linguagem de programação fundamental para o desenvolvimento web, utilizada para adicionar **interatividade** e **dinamismo** às páginas HTML e CSS.
 
-2. Sintaxe Básica
-Operadores Aritméticos
+**História:**  
+Criado em 1995 por **Brendan Eich** (Netscape). Evoluiu com o surgimento de bibliotecas como **jQuery**, frameworks como **Angular**, **React**, **Vue.js** e, em 2009, o **Node.js**, que permitiu seu uso no back-end.
 
-    +: Soma
+**Ecossistema:**  
+Possui um vasto ecossistema com ferramentas e bibliotecas, sendo uma das linguagens mais versáteis e utilizadas no mundo.
 
-    -: Subtração
+> ⚠️ **Observação:** Java e JavaScript não são a mesma coisa.
 
-    *: Multiplicação
+---
 
-    /: Divisão
+## 🧮 Sintaxe Básica – Operadores Aritméticos
 
-    %: Resto da divisão
+- `+` Soma  
+- `-` Subtração  
+- `*` Multiplicação  
+- `/` Divisão  
+- `%` Resto da divisão  
 
-Variáveis
+---
 
-    Tipagem: JavaScript é uma linguagem de tipagem fraca (ou dinâmica).
+## 📝 Variáveis
 
-    let: Usada para declarar variáveis cujo valor pode ser alterado.
+**Tipagem:**  
+JavaScript possui **tipagem fraca (dinâmica)**.
 
-    let nome = "Maria";
-    let idade = 25;
+```javascript
+let nome = "Maria";
+let idade = 25;
 
-    const: Usada para declarar constantes, ou seja, valores que não serão alterados.
+const PI = 3.14159;
+```
 
-    const PI = 3.14159;
+- `let`: Declara variáveis que podem ser alteradas.  
+- `const`: Declara constantes (não podem ser reatribuídas).
 
-Comandos de Saída
+---
 
-    console.log(): Exibe uma mensagem no console de desenvolvedor do navegador.
+## 📤 Comandos de Saída
 
-    console.log("Olá, Mundo!");
+```javascript
+console.log("Olá, Mundo!");       // Exibe no console
+alert("Mensagem importante!");    // Alerta para o usuário
+let nomeUsuario = prompt("Qual é o seu nome?");
+let aceitaTermos = confirm("Você aceita os termos de uso?");
+```
 
-    alert(): Exibe uma caixa de diálogo de alerta para o usuário.
+---
 
-    alert("Esta é uma mensagem importante!");
+## 🔀 Estruturas de Controle – Condicionais
 
-    prompt(): Exibe uma caixa de diálogo que solicita uma entrada do usuário.
-
-    let nomeUsuario = prompt("Qual é o seu nome?");
-
-    confirm(): Exibe uma caixa de diálogo de confirmação (OK/Cancelar).
-
-    let aceitaTermos = confirm("Você aceita os termos de uso?");
-
-3. Estruturas de Controle
-Condicionais
-
-A estrutura if/else permite executar blocos de código com base em uma condição.
-
-    ==: Compara apenas o valor.
-
-    ===: Compara o valor e o tipo.
-
+```javascript
 let numero = 10;
 let texto = "10";
 
 if (numero == texto) {
-  console.log("Verdadeiro, pois os valores são iguais."); // Executa
+  console.log("Verdadeiro - valores iguais");
 }
 
 if (numero === texto) {
-  console.log("Isso não será executado.");
+  console.log("Isso não será executado");
 } else {
-  console.log("Falso, pois os tipos são diferentes (number vs string)."); // Executa
+  console.log("Falso - tipos diferentes");
 }
+```
 
-4. Estruturas de Dados
-Objetos
+- `==` Compara apenas o valor  
+- `===` Compara valor **e tipo**
 
-Coleções de propriedades (pares chave-valor).
+---
 
+## 📦 Estruturas de Dados
+
+### Objetos
+
+```javascript
 const carro = {
   marca: "Honda",
   modelo: "Civic",
@@ -89,74 +92,73 @@ const carro = {
   cor: "Preto"
 };
 
-console.log(carro.marca); // Saída: Honda
+console.log(carro.marca); // Honda
+```
 
-Arrays (Vetores)
+### Arrays
 
-Listas ordenadas de valores. São dinâmicos e podem conter tipos de dados diferentes.
-
+```javascript
 const linguagens = ["HTML", "CSS", "JavaScript"];
 
-// Acessar um elemento
-console.log(linguagens[2]); // Saída: JavaScript
+console.log(linguagens[2]);      // JavaScript
+linguagens.push("PHP");          // Adiciona ao final
+linguagens.unshift("Python");   // Adiciona ao início
+let ultimo = linguagens.pop();  // Remove do final
+let primeiro = linguagens.shift(); // Remove do início
+console.log(linguagens.length); // Tamanho
+```
 
-// Adicionar no final
-linguagens.push("PHP");
+---
 
-// Adicionar no início
-linguagens.unshift("Python");
+## 🌐 Manipulação do DOM
 
-// Remover do final
-let ultimo = linguagens.pop();
+O **DOM** representa a estrutura de uma página HTML. Com JavaScript, é possível **modificar** conteúdo, estrutura e estilo da página.
 
-// Remover do início
-let primeiro = linguagens.shift();
+### Selecionando Elementos
 
-// Tamanho do array
-console.log(linguagens.length);
+```javascript
+document.getElementById('id');
+document.querySelector('seletor-css');
+```
 
-5. Manipulação do DOM (Document Object Model)
+### Modificando Elementos
 
-O DOM é a representação da estrutura de uma página HTML que permite ao JavaScript modificar seu conteúdo, estrutura e estilo.
-Selecionando Elementos
+```javascript
+element.innerHTML = "Novo conteúdo";
+element.style.color = "blue";
+element.classList.add("classe");
+element.classList.remove("classe");
+```
 
-    document.getElementById('id-do-elemento'): Seleciona um único elemento pelo seu id.
+### Exemplo
 
-    document.querySelector('seletor-css'): Seleciona o primeiro elemento que corresponde ao seletor CSS.
-
-Modificando Elementos
-
-    .innerHTML: Altera o conteúdo HTML de um elemento.
-
-    .style: Altera o CSS inline de um elemento.
-
-    .classList.add('nome-da-classe'): Adiciona uma classe CSS.
-
-    .classList.remove('nome-da-classe'): Remove uma classe CSS.
-
-Exemplo:
-
+```html
 <p id="paragrafo">Texto original.</p>
 <button onclick="mudarTexto()">Mudar Texto</button>
-```javascript
+
+<script>
 function mudarTexto() {
   const p = document.getElementById('paragrafo');
   p.innerHTML = "Texto alterado pelo JavaScript!";
   p.style.color = "blue";
   p.style.fontWeight = "bold";
 }
+</script>
+```
 
-6. Formulários
+---
 
-O JavaScript é essencial para validar e processar dados de formulários no lado do cliente.
-Acessando Valores
+## 🧾 Formulários
 
-Para obter o valor de um campo de formulário, use a propriedade .value.
+O JavaScript é essencial para **validar** e **processar dados** de formulários no lado do cliente.
 
-<label for="nome">Nome:</label>
-<input type="text" id="nome">
+### Acessando Valores
+
+```html
+<input type="text" id="nome" placeholder="Nome">
 <button onclick="validar()">Enviar</button>
-```javascript
+
+<script>
 function validar() {
   const nomeInput = document.getElementById('nome');
   const nomeValor = nomeInput.value;
@@ -167,15 +169,24 @@ function validar() {
     alert(`Olá, ${nomeValor}!`);
   }
 }
+</script>
+```
 
-Tipos de Input Comuns
+### Tipos Comuns de Inputs
 
-    Checkbox: Para múltiplas seleções.
+- ✅ **Checkbox:** múltiplas seleções
+- 🔘 **Radio:** seleção única (grupo com mesmo `name`)
+- 🔽 **Select:** lista suspensa (dropdown)
+- 📝 **Textarea:** textos longos
+- 📋 **Datalist:** sugestões automáticas
 
-    Radio: Para seleção única dentro de um grupo (name igual).
+---
 
-    Select: Para listas suspensas (dropdown).
+## ✨ Conclusão
 
-    Textarea: Para textos longos.
+JavaScript é uma linguagem essencial para quem deseja trabalhar com desenvolvimento web. Seus recursos e vasta comunidade tornam o aprendizado recompensador para qualquer nível de programador.
 
-    Datalist: Sugestão de preenchimento automático.
+---
+
+👨‍🏫 **Apresentação por:** Henrique Delegrego  
+📚 **Resumo elaborado por:** Caio Ítalo Lima Amaro  
